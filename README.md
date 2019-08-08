@@ -15,8 +15,12 @@ Plus it just gets a little messy.
 4. Within the shorcut properties, change "target" to the filepath of "lossless-flip.cmd"
 5. Give it a test!
 
+## Debug
+If for whatever reason this simple script causes you strife,
+Within 'lossless-flip.cmd' swap 'EXIT' above for 'PAUSE' and change shortcut in 'shell:startup' from "Minimized" to "Maximized".
+
 ## To do
 
 - Batch processing (whole directories at once)
 - Better error management (though there's not much to go wrong)
-- Use OpenCV to detect orientation and apply rotation automatically
+- Use OpenCV to detect orientation by looking for faces and sky and apply rotation automatically
