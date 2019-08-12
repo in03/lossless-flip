@@ -16,6 +16,9 @@ import sys
 import os
 import cv
 
+csd = os.path.dirname(os.path.realpath(__file__))
+
+
 def detectFaces(small_img,loadedCascade):
     tries = 0 # 4 shots at getting faces. 
 
@@ -106,10 +109,15 @@ def trydetect():
     grayscale = cv.LoadImageM(os.path.abspath(sys.argv[-1]),cv.CV_LOAD_IMAGE_GRAYSCALE) # the image itself
 
     # Get more at: https://code.ros.org/svn/opencv/tags/latest_tested_snapshot/opencv/data/haarcascades/
-    cascades = ( # Listed in order most likely to appear in a photo
-	    '/usr/local/share/haarcascade_frontalface_alt.xml',
-	    '/usr/local/share/haarcascade_profileface.xml',
-	    '/usr/local/share/haarcascade_fullbody.xml',
+    
+	
+	haar_dir = csd + "data\\haar_cascades\\"
+	cascades = ( # Listed in order most likely to appear in a photo
+	    'haarcascade_fullbody.xml',
+	    'haarcascade_upperbody.xml',
+	    'haarcascade_lowerbody.xml',
+		'haarcascade_profileface.xml',
+		'haarcascade_frontalface_default.xml',
 	    )
 
     for cascade in cascades:
