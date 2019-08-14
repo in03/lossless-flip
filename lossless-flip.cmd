@@ -2,7 +2,7 @@
 cls
 cd %~dp0
 python lossless-flip.py %1
-EXIT
+PAUSE
 
 ::	TO DEBUG:
 ::	Swap 'EXIT' above for 'PAUSE' and change shortcut
